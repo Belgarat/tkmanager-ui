@@ -1,0 +1,6 @@
+<label for="login">Username:</label>
+<input [(ngModel)]="username" type="text" name="username" id="username">
+<label for="login">Password:</label>
+<input [(ngModel)]="password" type="password" name="password" id="password">
+<input type="button" (click)="login()" name="login" id="login" value="Login">
+<h2>{{prova()}}</h2>
