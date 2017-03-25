@@ -8,15 +8,5 @@ import { WorkersService } from './service/workers.service';
 })
 export class AppComponent {
   title: string = 'Ticket Manager';
-  
-  public prova(val){
-    val = val || '';
-    if(val==''){
-      return '';
-    }else{
-      return val+"-";
-    }
-    
-  }
-
+ 
 }

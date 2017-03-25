@@ -1,12 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { ApiService } from './api.service';
 
 @Injectable()
 export class WorkersService {
-    constructor(private apiService: ApiService) {
+    private id: number;
+
+    constructor(
+        private apiService: ApiService,
+    ) {}
+
+    get() {
+        return this.apiService.get('workers', this.id);
     }
 
-    list() {
-        return this.apiService.get('/workers');
+    list(){
+        return this.apiService.list('workers');
     }
 }
