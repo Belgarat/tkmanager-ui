@@ -7,13 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { WorkersService } from './service/workers.service';
 import { ApiService } from './service/api.service';
-import { LoginComponent } from './login/login.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './service/auth.service';
 import { TopbarComponent } from './topbar/topbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    AuthComponent,
     TopbarComponent
   ],
   imports: [
@@ -25,6 +26,7 @@ import { TopbarComponent } from './topbar/topbar.component';
   providers: [
     ApiService,
     { provide: WorkersService, useClass: WorkersService },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
