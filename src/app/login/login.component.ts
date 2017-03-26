@@ -16,11 +16,17 @@ export class LoginComponent implements OnInit {
   constructor( private workersService: WorkersService){
   }
 
-  login(): void{
+  login(): any{
     console.log("Utente:"+this.username);
     console.log("Password:"+this.password);
-    console.log(this.workersService.list());
-    console.log(this.workersService.get());
+    let User = this.workersService.list().find(w => w.username == this.username);
+    localStorage.setItem('currentUser', JSON.stringify(User));
+    location.reload();
+  }
+
+  logout(): any{
+    localStorage.removeItem('currentUser');
+    location.reload();
   }
 
 
