@@ -10,12 +10,16 @@ import { ApiService } from './service/api.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './service/auth.service';
 import { TopbarComponent } from './topbar/topbar.component';
+import { TicketsComponent } from './tickets/tickets.component';
+import { TicketItemComponent } from './ticket-item/ticket-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    TopbarComponent
+    TopbarComponent,
+    TicketsComponent,
+    TicketItemComponent
   ],
   imports: [
     BrowserModule,

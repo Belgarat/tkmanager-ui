@@ -7,4 +7,7 @@
   <div *ngIf="!this.auth.isAuth()" class="row">
     <app-auth></app-auth>
   </div>
+  <div *ngIf="this.auth.isAuth()" class="row">
+    <app-tickets user_id="{{user_id}}"></app-tickets>
+  </div>
 </div>
