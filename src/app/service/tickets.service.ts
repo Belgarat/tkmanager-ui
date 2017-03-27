@@ -9,8 +9,8 @@ export class TicketsService {
         private apiService: ApiService,
     ) {}
 
-    get() {
-        return this.apiService.get('tickets', this.id);
+    get(id) {
+        return this.apiService.get('tickets', id);
     }
 
     list(){

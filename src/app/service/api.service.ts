@@ -16,7 +16,7 @@ export class ApiService {
         this.tickets_list = [
             {
             id: 1,
-            create_at: "",
+            create_at: "11/03/2017 16:15",
             update_at: "",
             delete_at: "",
             customer_id: 1,
@@ -31,7 +31,7 @@ export class ApiService {
             },
             {
             id: 2,
-            create_at: "",
+            create_at: "25/03/2017 14:10",
             update_at: "",
             delete_at: "",
             customer_id: 2,

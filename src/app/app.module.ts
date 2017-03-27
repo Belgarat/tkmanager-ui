@@ -11,6 +11,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './service/auth.service';
 import { TopbarComponent } from './topbar/topbar.component';
 import { TicketsComponent } from './tickets/tickets.component';
+import { TicketsService } from './service/tickets.service'
 import { TicketItemComponent } from './ticket-item/ticket-item.component';
 
 @NgModule({
@@ -30,7 +31,8 @@ import { TicketItemComponent } from './ticket-item/ticket-item.component';
   providers: [
     ApiService,
     { provide: WorkersService, useClass: WorkersService },
-    AuthService
+    AuthService,
+    TicketsService
   ],
   bootstrap: [AppComponent]
 })

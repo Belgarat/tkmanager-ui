@@ -1,7 +1,16 @@
 <div class="panel panel-default">
   <div class="panel-heading">My ticket</div>
   <div class="panel-body">
-    My tickets list
+      <table class="table">
+        <th>Id</th>
+        <th>Date</th>
+        <th>Description</th>
+        <tr *ngFor="let item of this.tickets; let i = index;" (click)="activate(i);" [class.active]="i==this.active">
+          <td>{{item.id}}</td>
+          <td>{{item.create_at}}</td>
+          <td>{{item.description}}</td>
+        </tr>
+      </table>
   </div>
 </div>
 <div class="panel panel-default">

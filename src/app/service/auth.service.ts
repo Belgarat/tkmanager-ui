@@ -27,7 +27,13 @@ export class AuthService {
   }
 
   get(): any{
-    return JSON.parse(localStorage.getItem('currentUser'));
+    let User: any;
+    if(localStorage.getItem('currentUser')){
+      User = JSON.parse(localStorage.getItem('currentUser'));
+    }else{
+      User = {};
+    }
+    return User;
   }
 
 }

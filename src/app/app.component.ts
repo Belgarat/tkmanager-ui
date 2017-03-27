@@ -9,7 +9,7 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent implements OnInit{
   title: string = 'Ticket Manager'; 
-  user_id: number = 0;
+  private User;
   //private isAuth: boolean = false;
 
   constructor( private auth: AuthService){
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.user_id = this.auth.get().id;
+      this.User = this.auth.get();
   }
 
 
