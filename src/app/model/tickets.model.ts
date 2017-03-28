@@ -1,8 +1,8 @@
 export class Tickets {
     id: number = 0;
-    create_at: string = '';
-    update_at: string = '';
-    delete_at: string = '';
+    created_at: string = '';
+    updated_at: string = '';
+    deleted_at: string = '';
     customer_id: number = 0;
     customer_name: string = '';
     creator_id: number = 0;

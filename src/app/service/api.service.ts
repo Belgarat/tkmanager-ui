@@ -16,9 +16,9 @@ export class ApiService {
         this.tickets_list = [
             {
             id: 1,
-            create_at: "11/03/2017 16:15",
-            update_at: "",
-            delete_at: "",
+            created_at: "11/03/2017 16:15",
+            updated_at: "",
+            deleted_at: "",
             customer_id: 1,
             customer_name: "Telecom s.p.a.",
             creator_id: 1,
@@ -31,9 +31,9 @@ export class ApiService {
             },
             {
             id: 2,
-            create_at: "25/03/2017 14:10",
-            update_at: "",
-            delete_at: "",
+            created_at: "25/03/2017 14:10",
+            updated_at: "",
+            deleted_at: "",
             customer_id: 2,
             customer_name: "Google it s.p.a",
             creator_id: 2,

@@ -1,23 +1,41 @@
-<div class="panel panel-default">
-  <div class="panel-heading">My ticket</div>
-  <div class="panel-body">
-      <table class="table">
-        <th>Id</th>
-        <th>Date</th>
-        <th>Description</th>
-        <tr *ngFor="let item of this.tickets; let i = index;" (click)="activate(i);" [class.active]="i==this.active">
-          <td>{{item.id}}</td>
-          <td>{{item.create_at}}</td>
-          <td>{{item.description}}</td>
-        </tr>
-      </table>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">My ticket</div>
+      <div class="panel-body">
+          <table class="table">
+            <th>Id</th>
+            <th>Date</th>
+            <th>Description</th>
+            <tr *ngFor="let item of this.tickets; let i = index;" (click)="activate(i,item);" [class.active]="i==this.active">
+              <td>{{item.id}}</td>
+              <td>{{item.created_at}}</td>
+              <td>{{item.description}}</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">Ticket detail</div>
+        <div *ngIf="item != undefined" class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item">Id: {{item?.id}}</li>
+              <li class="list-group-item">Date: {{item?.created_at}}</li>
+              <li class="list-group-item">Description: {{item?.description}}</li>
+            </ul>
+        </div>
+      </div>
   </div>
 </div>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Ticket unassigned</h3>
-  </div>
-  <div class="panel-body">
-    Tickets unassigned
+<div class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Ticket unassigned</h3>
+    </div>
+    <div class="panel-body">
+      Tickets unassigned
+    </div>
   </div>
 </div>

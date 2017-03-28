@@ -11,17 +11,19 @@ export class TicketsComponent implements OnInit {
   @Input() user_id: number;
   private tickets;
   private active: number;
+  private item;
 
   constructor(private ticketsService: TicketsService,) { 
-    
+    console.log(this.item);
   }
 
   ngOnInit() {
     this.tickets=this.ticketsService.list();
   }
 
-  activate(i: number){
+  activate(i: number,item){
     console.log(i);
+    this.item = item;
     this.active = i;
   }
 
