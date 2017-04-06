@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6">
     <div class="panel panel-default">
-      <div class="panel-heading">My ticket</div>
+      <div class="panel-heading">My ticket - <a href="#" (click)="addNew()">Add</a></div>
       <div class="panel-body">
           <table class="table">
             <th>Id</th>
@@ -19,11 +19,27 @@
   <div class="col-md-6">
     <div class="panel panel-default">
         <div class="panel-heading">Ticket detail</div>
+        <div *ngIf="item_id == 0" class="panel-body">
+          <h1>Model-based Form Example:</h1>
+              <form [formGroup]="form" (ngSubmit)="onSubmit(form, $e)">
+                  <p>
+                      <label>Description</label>
+                      <input type="text" formControlName="description">
+                  </p>
+                  <p>
+                      <button type="submit" [disabled]="!form.valid">Submit</button>
+                  </p>
+          </form>
+        </div>
         <div *ngIf="item != undefined" class="panel-body">
             <ul class="list-group">
               <li class="list-group-item">Id: {{item?.id}}</li>
               <li class="list-group-item">Date: {{item?.created_at}}</li>
               <li class="list-group-item">Description: {{item?.description}}</li>
+              <li class="list-group-item">Customer name: {{item?.customer_name}}</li>
+              <li class="list-group-item">User cerator: {{item?.creator_username}}</li>
+              <li class="list-group-item">Status: {{item?.status_status}}</li>
+              <li class="list-group-item">Priority: {{item?.priority_priority}}</li>
             </ul>
         </div>
       </div>

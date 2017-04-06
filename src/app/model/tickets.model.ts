@@ -6,7 +6,7 @@ export class Tickets {
     customer_id: number = 0;
     customer_name: string = '';
     creator_id: number = 0;
-    creator_usernsme: string = '';
+    creator_username: string = '';
     status_id: number = 0;
     status_status: string = '';
     priority_id: number = 0;
