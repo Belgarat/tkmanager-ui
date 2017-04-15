@@ -25,8 +25,9 @@ export class MokaCustomersService {
     private customer: Customers;
     private serviceName: string = "customers";
     private id: number;
+    private customers_list: Array<Customers>;
 
-    constructor(private customers_list: Array<Customers>) {
+    constructor() {
 
         this.customers_list = [
             {

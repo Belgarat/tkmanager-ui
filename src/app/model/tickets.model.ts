@@ -8,8 +8,8 @@ export class Tickets {
     creator_id: number = 0;
     creator_username: string = '';
     status_id: number = 0;
-    status_status: string = '';
+    status: string = '';
     priority_id: number = 0;
-    priority_priority: string = '';
+    priority: string = '';
     description: string = '';
 }

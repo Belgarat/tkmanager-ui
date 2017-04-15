@@ -56,9 +56,9 @@ export class TicketsComponent implements OnInit {
       creator_id: 3,
       creator_username: "mbrunet",
       status_id: 1,
-      status_status: "Open",
+      status: "Open",
       priority_id: 1,
-      priority_priority: 'Hight',
+      priority: 'Hight',
       description: this.description.value
     });
 

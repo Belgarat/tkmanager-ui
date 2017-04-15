@@ -13,9 +13,15 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './service/auth.service';
 import { TopbarComponent } from './topbar/topbar.component';
 import { TicketsComponent } from './tickets/tickets.component';
-import { TicketsService, MokaTicketsService } from './service/tickets.service'
+import { TicketsService, MokaTicketsService } from './service/tickets.service';
 import { TicketItemComponent } from './ticket-item/ticket-item.component';
-import { CustomersService, MokaCustomersService } from './service/customers.service'
+import { CustomersService, MokaCustomersService } from './service/customers.service';
+import { CustomersComponent } from './customers/customers.component';
+
+const routes: Routes = [
+  {path: '', component: TicketsComponent},
+  {path: 'customers', component: CustomersComponent}
+];
 
 @NgModule({
   declarations: [
@@ -23,20 +29,23 @@ import { CustomersService, MokaCustomersService } from './service/customers.serv
     AuthComponent,
     TopbarComponent,
     TicketsComponent,
-    TicketItemComponent
+    TicketItemComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     ApiService,
     { provide: WorkersService, useClass: WorkersService },
     AuthService,
     { provide: TicketsService, useClass: TicketsService },
+    { provide: CustomersService, useClass: MokaCustomersService },
   ],
   bootstrap: [AppComponent]
 })

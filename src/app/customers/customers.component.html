@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-12 col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Customers - <a href="#" (click)="addNew()">Add</a></div>
+      <div class="panel-body">
+          <table class="table">
+            <th><a (click)="this.sortColumn()">Id</a></th>
+            <th><a (click)="this.sortColumn()">Name</a></th>
+            <th>Description</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>vatFiscalCode</th>
+            <th>notes</th>
+            <tr *ngFor="let item of this.customers; let i = index;" (click)="activate(i,item);" [class.active]="i==this.active">
+              <td>{{item?.id}}</td>
+              <td>{{item?.name}}</td>
+              <td>{{item?.description}}</td>
+              <td>{{item?.email}}</td>
+              <td>{{item?.address}}</td>
+              <td>{{item?.phone}}</td>
+              <td>{{item?.vatFiscalCode}}</td>
+              <td>{{item?.notes}}</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
