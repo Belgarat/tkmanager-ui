@@ -11,39 +11,36 @@ var fOrder: boolean = true;
 })
 export class CustomersComponent implements OnInit {
   private customers: Array<Customers>;
+  private sourceCustomers: Array<Customers>;
+  private fOrder: boolean = true;
+  private colName: string = "";
+  private str: string ="";
+  private formSearch: boolean = false;
 
   constructor(private customersService: CustomersService) { }
 
   ngOnInit() {
     this.customers = this.customersService.list();
+    this.sourceCustomers = this.customers;
   }
 
-  sortNumber(a, b) {
-    if(fOrder){
-      fOrder = false;
-      return a.id - b.id;
+  sortData(a, b) {
+    if(this.fOrder){
+      this.fOrder = false;
+      return a.name.localeCompare(b[this.colName]);
     }else{
-      fOrder = true;
-      return b.id - a.id;
+      this.fOrder = true;
+      return b.name.localeCompare(a[this.colName]);
     }
   }
 
-  sortString(a, b) {
-    if(fOrder){
-      fOrder = false;
-      return a.name.localeCompare(b.name);
-    }else{
-      fOrder = true;
-      return b.name.localeCompare(a.name);
-    }
+  sortColumn(col){
+    this.colName=col;
+    //this.customers.sort(this.sortData.bind(this));
   }
 
-  sortColumn(tp){
-    if(tp == "number"){
-      this.customers.sort(this.sortNumber);
-    }else{
-      this.customers.sort(this.sortString);
-    }
+  update(customers){
+    this.customers = customers;
   }
 
 }

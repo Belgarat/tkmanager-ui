@@ -31,9 +31,9 @@ export class ApiService {
             creator_id: 1,
             creator_username: "admin",
             status_id: 1,
-            status_status: "opened",
+            status: "opened",
             priority_id: 2,
-            priority_priority: "medium",
+            priority: "medium",
             description: "This is or first helpdesk request! Take care of our customer, please!"
             },
             {
@@ -46,9 +46,9 @@ export class ApiService {
             creator_id: 2,
             creator_username: "mbrunet",
             status_id: 1,
-            status_status: "opened",
+            status: "opened",
             priority_id: 1,
-            priority_priority: "hight",
+            priority: "hight",
             description: "This is our second helpdesk request! Take care of customers! \r\nSee ya!"
             }
         ];

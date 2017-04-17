@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { WorkersService, MokaWorkersService } from './service/workers.service';
@@ -17,6 +18,7 @@ import { TicketsService, MokaTicketsService } from './service/tickets.service';
 import { TicketItemComponent } from './ticket-item/ticket-item.component';
 import { CustomersService, MokaCustomersService } from './service/customers.service';
 import { CustomersComponent } from './customers/customers.component';
+import { ActionbarComponent } from './actionbar/actionbar.component';
 
 const routes: Routes = [
   {path: '', component: TicketsComponent},
@@ -30,12 +32,14 @@ const routes: Routes = [
     TopbarComponent,
     TicketsComponent,
     TicketItemComponent,
-    CustomersComponent
+    CustomersComponent,
+    ActionbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    NgxPaginationModule,
     NgbModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
