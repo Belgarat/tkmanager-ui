@@ -19,6 +19,7 @@ import { TicketItemComponent } from './ticket-item/ticket-item.component';
 import { CustomersService, MokaCustomersService } from './service/customers.service';
 import { CustomersComponent } from './customers/customers.component';
 import { ActionbarComponent } from './actionbar/actionbar.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   {path: '', component: TicketsComponent},
@@ -33,7 +34,8 @@ const routes: Routes = [
     TicketsComponent,
     TicketItemComponent,
     CustomersComponent,
-    ActionbarComponent
+    ActionbarComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

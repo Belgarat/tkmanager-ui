@@ -36,7 +36,7 @@ export class CustomersComponent implements OnInit {
 
   sortColumn(col){
     this.colName=col;
-    //this.customers.sort(this.sortData.bind(this));
+    this.customers.sort(this.sortData.bind(this));
   }
 
   update(customers){

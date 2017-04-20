@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <th *ngFor="let col of this.cols">{{col}}</th>
+  </tr>
+  <tr *ngFor="let row of this.items | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;" (click)="activate(i,row);" [class.active]="i==this.active">
+    <td>{{row?.id}}</td>
+    <td>{{row?.name}}</td>
+    <td>{{row?.description}}</td>
+    <td>{{row?.email}}</td>
+    <td>{{row?.address}}</td>
+    <td>{{row?.phone}}</td>
+    <td>{{row?.vatFiscalCode}}</td>
+    <td>{{row?.notes}}</td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

@@ -74,7 +74,7 @@ export class ApiService {
                             .catch(this.handleError);
         }
         if(path=="tickets"){
-            console.log(this.serviceUrl+"/tickets");
+            //console.log(this.serviceUrl+"/tickets");
             response = this.http.get(this.serviceUrl+"/tickets", {headers: this.getHeaders()})
                             .map(res => res.json())
                             .catch(this.handleError);
