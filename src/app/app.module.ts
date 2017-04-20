@@ -20,6 +20,7 @@ import { CustomersService, MokaCustomersService } from './service/customers.serv
 import { CustomersComponent } from './customers/customers.component';
 import { ActionbarComponent } from './actionbar/actionbar.component';
 import { TableComponent } from './table/table.component';
+import { CapitalizePipe } from './pipe/capitalize.pipe';
 
 const routes: Routes = [
   {path: '', component: TicketsComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
     TicketItemComponent,
     CustomersComponent,
     ActionbarComponent,
-    TableComponent
+    TableComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

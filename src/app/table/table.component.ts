@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { CapitalizePipe } from '../pipe/capitalize.pipe';
 
 @Component({
   selector: 'app-table',
@@ -8,22 +9,21 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class TableComponent implements OnInit {
   @Input() rows: Array<any>;
   @Input() cols: any;
-  private items: Array<any>;
+  private items = [];
 
   constructor() { }
 
   ngOnInit() {
     //console.log(this.cols);
     //console.log(this.rows);
-    var ary: any = [];
-    var i =0;
-    this.rows.map((row) => this.cols.map(function(col){
-      ary[i] = new Object();
-      ary[i][col] = row[col];
-      console.log(ary);
-      //this.items.push({col: row[col]});
-    }));
-    //console.log(this.items);
+    this.rows.map(function(row){
+      var ary = {};
+      this.cols.map(function(col){
+        ary[col] = row[col];
+      },this)
+      this.items.push(ary);
+    }, this)
+    console.log(this.items);
   }
   
 

@@ -1,6 +1,6 @@
 <table class="table">
   <tr>
-    <th *ngFor="let col of this.cols">{{col}}</th>
+    <th *ngFor="let col of this.cols">{{col | capitalize}}</th>
   </tr>
   <tr *ngFor="let row of this.items | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;" (click)="activate(i,row);" [class.active]="i==this.active">
     <td>{{row?.id}}</td>
