@@ -38,7 +38,7 @@ var tickets_list = [
 @Injectable()
 export class TicketsService {
     private id: number;
-    private tickets = [];
+    private tickets: any;
 
     constructor(
         private apiService: ApiService,
@@ -49,9 +49,8 @@ export class TicketsService {
     }
 
     list(){
-        this.apiService.list('tickets').subscribe(data => data.map((index,value) => this.tickets.push(index)));
-        //console.log(this.tickets)
-        return this.tickets;
+        //this.apiService.list('tickets').subscribe(data => data.map((index,value) => this.tickets.push(index)));
+        return this.apiService.list1('tickets');
     }
 }
 

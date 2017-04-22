@@ -23,15 +23,17 @@ export class TicketsComponent implements OnInit {
     this.form = fb.group({
                 "description": this.description,
     });
-    console.log(this.item);
+    //console.log(this.item);
   }
 
   ngOnInit() {
+    //console.log(this.ticketsService.list());
     this.tickets=this.ticketsService.list();
+    console.log(this.tickets);
   }
 
   activate(i: number,item){
-    console.log(i);
+    //console.log(i);
     this.item = item;
     this.active = i;
   }

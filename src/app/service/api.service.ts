@@ -75,11 +75,18 @@ export class ApiService {
         }
         if(path=="tickets"){
             //console.log(this.serviceUrl+"/tickets");
-            response = this.http.get(this.serviceUrl+"/tickets", {headers: this.getHeaders()})
+            this.http.get(this.serviceUrl+"/tickets", {headers: this.getHeaders()})
                             .map(res => res.json())
                             .catch(this.handleError);
         }
         return response;
+    }
+
+    list1(path: string){
+            this.http.get(this.serviceUrl+"/tickets", {headers: this.getHeaders()})
+                            .map(res => res.json())
+                            .subscribe(result => this.tickets_list = result);
+            return this.tickets_list;
     }
 
     private getHeaders(){

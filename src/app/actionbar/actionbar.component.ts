@@ -13,26 +13,10 @@ export class ActionbarComponent implements OnInit {
   @Input() formSearch: boolean = false;
   @Input() sourceList;
   @Output() onFilter: EventEmitter<any> = new EventEmitter<any>();
-  @Output() onOrder: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  sortData(a, b) {
-    if(this.fOrder){
-      this.fOrder = false;
-      return a.name.localeCompare(b[this.colName]);
-    }else{
-      this.fOrder = true;
-      return b.name.localeCompare(a[this.colName]);
-    }
-  }
-
-  sortColumn(col){
-    this.colName=col;
-    this.onOrder.emit(this.list.sort(this.sortData.bind(this)));
   }
 
   filterItem(value){

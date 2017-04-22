@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, enableProdMode } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: '', component: TicketsComponent},
   {path: 'customers', component: CustomersComponent}
 ];
-
+//enableProdMode();
 @NgModule({
   declarations: [
     AppComponent,

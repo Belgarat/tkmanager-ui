@@ -3,6 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">My ticket - <a href="#" (click)="addNew()">Add</a></div>
       <div class="panel-body">
+          <app-table [rows]="this.tickets" [cols]="['id','created_at','description']"></app-table>
           <table class="table">
             <th>Id</th>
             <th>Date</th>
