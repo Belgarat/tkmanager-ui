@@ -66,5 +66,8 @@ export class TicketsComponent implements OnInit {
 
     console.log(this.tickets);
   }
+  tableSelected($event){
+    console.log($event);
+  }
 
 }
