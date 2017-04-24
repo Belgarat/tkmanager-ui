@@ -1,4 +1,4 @@
-<app-actionbar 
+<app-actionbar *ngIf="this.actionbar"
   [sourceList]="this.rows"
   [formSearch]="this.formSearch"
   (onFilter)="update($event)"

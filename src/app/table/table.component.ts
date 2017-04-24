@@ -10,6 +10,7 @@ import { CapitalizePipe } from '../pipe/capitalize.pipe';
 export class TableComponent implements OnInit {
   @Input() rows: Array<any>;
   @Input() cols: any;
+  @Input() actionbar: boolean = true;
   @Output() onSelected: EventEmitter<any> = new EventEmitter<any>();
   private items = [];
   private fOrder: boolean = true;
