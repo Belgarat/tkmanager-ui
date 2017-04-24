@@ -12,6 +12,7 @@ import { WorkersService, MokaWorkersService } from './service/workers.service';
 import { ApiService } from './service/api.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './service/auth.service';
+import { AuthGuard } from './guard/auth.guard';
 import { TopbarComponent } from './topbar/topbar.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { TicketsService, MokaTicketsService } from './service/tickets.service';
@@ -23,8 +24,8 @@ import { TableComponent } from './table/table.component';
 import { CapitalizePipe } from './pipe/capitalize.pipe';
 
 const routes: Routes = [
-  {path: '', component: TicketsComponent},
-  {path: 'customers', component: CustomersComponent}
+  {path: '', component: TicketsComponent, canActivate: [AuthGuard]},
+  {path: 'customers', component: CustomersComponent, canActivate: [AuthGuard]}
 ];
 //enableProdMode();
 @NgModule({
@@ -50,10 +51,11 @@ const routes: Routes = [
   ],
   providers: [
     ApiService,
-    { provide: WorkersService, useClass: WorkersService },
+    { provide: WorkersService, useClass: MokaWorkersService },
     AuthService,
     { provide: TicketsService, useClass: TicketsService },
     { provide: CustomersService, useClass: MokaCustomersService },
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -50,7 +50,7 @@ export class TicketsService {
 
     list(){
         //this.apiService.list('tickets').subscribe(data => data.map((index,value) => this.tickets.push(index)));
-        return this.apiService.list1('tickets');
+        return this.apiService.list('tickets');
     }
 }
 
