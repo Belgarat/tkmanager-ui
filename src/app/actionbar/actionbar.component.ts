@@ -21,7 +21,11 @@ export class ActionbarComponent implements OnInit {
 
   filterItem(value){
     var regexp = new RegExp("(.*)?"+this.str+".*","i");
-    let target = value.name+value.description+value.email+value.address+value.phone;
+    var target = "";
+    console.log(value);
+    Object.keys(value).forEach(element => {
+      target = target+value[element];
+    });
     return target.match(regexp);
   }
 
