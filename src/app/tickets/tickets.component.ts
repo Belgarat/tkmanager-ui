@@ -29,7 +29,7 @@ export class TicketsComponent implements OnInit {
   ngOnInit() {
     //console.log(this.ticketsService.list());
     this.tickets=this.ticketsService.list();
-    console.log(this.tickets);
+    //console.log(this.tickets);
   }
 
   activate(i: number,item){
