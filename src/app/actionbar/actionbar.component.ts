@@ -24,7 +24,7 @@ export class ActionbarComponent implements OnInit {
     var target = "";
     console.log(value);
     Object.keys(value).forEach(element => {
-      target = target+value[element];
+      target = target+" "+value[element];
     });
     return target.match(regexp);
   }

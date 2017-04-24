@@ -11,6 +11,8 @@ export class TableComponent implements OnInit {
   @Input() rows: Array<any>;
   @Input() cols: any;
   @Input() actionbar: boolean = true;
+  @Input() pagination: boolean = true;
+  @Input() itemPerPage: number = 10;
   @Output() onSelected: EventEmitter<any> = new EventEmitter<any>();
   private items = [];
   private fOrder: boolean = true;
@@ -22,6 +24,9 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if(!this.pagination){
+      this.itemPerPage = this.rows.length;
+    }
     this.rows.map(function(row){
       var ary = {};
       this.cols.map(function(col){

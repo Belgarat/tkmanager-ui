@@ -1,29 +1,22 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input size="70" type="text" class="form-control box-shadow" placeholder="Search text or launch command">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
-          <ul class="nav navbar-nav">
-            <li><a class="nav-link" [routerLink]="['']">Home</a></li>
-            <li><a class="nav-link" [routerLink]="['/customers']">Customers</a></li>
-          </ul>
+  <div class="row">
+    <div class="col-sm-7 col-md-7">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="#">
+          <strong>{{title}}</strong>
+        </a></li>
+        <li><a class="nav-link" [routerLink]="['']">Home</a></li>
+        <li><a class="nav-link" [routerLink]="['/customers']">Customers</a></li>
+        <li><a href="#">{{ username }}</a></li>
+        <li><a href="#" (click)="this.logout();">Logout</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-5 col-md-5">
+      <form class="" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control box-shadow" placeholder="Search text or launch command">
         </div>
-        <div class="col-xs-3 text-right">
-          <ul class="nav navbar-nav">
-            <li><a class="navbar-brand" href="#">
-              <strong>{{title}}</strong>
-            </a></li>
-            <li><a href="#">{{ username }}</a></li>
-            <li><a href="#" (click)="this.logout();">Logout</a></li>
-          </ul>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </nav>

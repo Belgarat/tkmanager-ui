@@ -8,10 +8,10 @@
   <tr>
     <th *ngFor="let col of this.cols"><a (click)="this.sortColumn(col);">{{col | capitalize}}</a></th>
   </tr>
-  <tr *ngFor="let row of this.items | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;" (click)="activate(i,row);" [class.active]="i==this.active">
+  <tr *ngFor="let row of this.items | paginate: { itemsPerPage: this.itemPerPage, currentPage: p }; let i = index;" (click)="activate(i,row);" [class.active]="i==this.active">
     <td *ngFor="let col of this.cols">
       {{ row[col] }}
     </td>
   </tr>
 </table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls *ngIf="this.pagination" (pageChange)="p = $event"></pagination-controls>
