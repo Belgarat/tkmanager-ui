@@ -4,16 +4,6 @@
       <div class="panel-heading">My ticket - <a href="#" (click)="addNew()">Add</a></div>
       <div class="panel-body">
           <app-table (onSelected)="tableSelected($event)" [rows]="this.tickets" [cols]="['id','created_at','description']"></app-table>
-          <table class="table">
-            <th>Id</th>
-            <th>Date</th>
-            <th>Description</th>
-            <tr *ngFor="let item of this.tickets; let i = index;" (click)="activate(i,item);" [class.active]="i==this.active">
-              <td>{{item.id}}</td>
-              <td>{{item.created_at}}</td>
-              <td>{{item.description}}</td>
-            </tr>
-          </table>
       </div>
     </div>
   </div>

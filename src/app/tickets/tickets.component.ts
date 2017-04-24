@@ -66,8 +66,8 @@ export class TicketsComponent implements OnInit {
 
     console.log(this.tickets);
   }
-  tableSelected($event){
-    console.log($event);
+  tableSelected($item){
+    this.item = this.tickets.filter((obj) => obj.id == $item.id)[0];
   }
 
 }
