@@ -12,8 +12,11 @@ export class TableComponent implements OnInit {
   @Input() cols: any;
   @Input() actionbar: boolean = true;
   @Input() pagination: boolean = true;
+  @Input() crud: boolean = true;
   @Input() itemPerPage: number = 10;
   @Output() onSelected: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onUpdating: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onDeleting: EventEmitter<any> = new EventEmitter<any>();
   private items = [];
   private fOrder: boolean = true;
   private colName: string = "";
@@ -66,9 +69,16 @@ export class TableComponent implements OnInit {
     this.items.sort(this.sortData.bind(this));
   }
 
-  update(rows){
+  filter(rows){
     this.items = rows;
   }
-  
+  rowUpdate(item){
+    console.log("Update item");
+    this.onUpdating.emit(item);
+  }
+  rowDelete(item){
+    console.log("Delete item");
+    this.onDeleting.emit(item);
+  }
 
 }

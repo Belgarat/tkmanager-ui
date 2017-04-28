@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ActionbarComponent implements OnInit {
   @Input() fOrder: boolean = true;
   @Input() colName: string = "";
+  @Input() crud: boolean = true;
   private str: string ="";
   private list: Array<any> = [];
   @Input() formSearch: boolean = false;

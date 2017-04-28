@@ -18,7 +18,7 @@ export class TopbarComponent implements OnInit {
   }
 
   logout(){
-    this.authService.logout();
+    this.authService.lblogout();
     //location.reload();
   }
 

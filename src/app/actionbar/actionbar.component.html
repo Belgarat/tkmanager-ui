@@ -1,6 +1,5 @@
 <div class="panel-heading">Customers - 
-  <a href="javascript:void(0);" (click)="addNew()"><span class="glyphicon glyphicon-plus glyph"></span></a>
-  <a href="javascript:void(0);" (click)="addNew()"><span class="glyphicon glyphicon-trash glyph"></span></a>
+  <a *ngIf="this.crud" href="javascript:void(0);" (click)="addNew()"><span class="glyphicon glyphicon-plus glyph"></span></a>
   <a  href="javascript:void(0);" (click)="this.formSearch = !this.formSearch"><span class="glyphicon glyphicon-search glyph"></span></a>
 <input *ngIf="this.formSearch" class="form-control" placeholder="Search ..." [(ngModel)]="str" (keyup)="this.filterData($event)" type="text" name="search" value=""></div>
 

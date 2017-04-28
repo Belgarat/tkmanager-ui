@@ -16,4 +16,12 @@ export class CustomersComponent implements OnInit {
     this.customers = this.customersService.list();
   }
 
+  itemUpdate(item){
+    console.log(item);
+  }
+
+  itemDelete(item){
+    console.log(item);
+  }
+
 }

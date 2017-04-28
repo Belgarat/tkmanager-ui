@@ -1,17 +1,20 @@
 <app-actionbar *ngIf="this.actionbar"
   [sourceList]="this.rows"
   [formSearch]="this.formSearch"
-  (onFilter)="update($event)"
+  [crud]="this.crud"
+  (onFilter)="filter($event)"
   >
 </app-actionbar>
 <table class="table">
   <tr>
     <th *ngFor="let col of this.cols"><a (click)="this.sortColumn(col);">{{col | capitalize}}</a></th>
+    <td *ngIf="this.crud"></td>
   </tr>
   <tr *ngFor="let row of this.items | paginate: { itemsPerPage: this.itemPerPage, currentPage: p }; let i = index;" (click)="activate(i,row);" [class.active]="i==this.active">
     <td *ngFor="let col of this.cols">
       {{ row[col] }}
     </td>
+    <td *ngIf="this.crud"><a (click)="rowUpdate(row);"><span class="glyphicon glyphicon-edit glyph"></span></a><a (click)="rowDelete(row);"><span class="glyphicon glyphicon-trash glyph"></span></a></td>
   </tr>
 </table>
 <pagination-controls *ngIf="this.pagination" (pageChange)="p = $event"></pagination-controls>

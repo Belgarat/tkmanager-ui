@@ -69,5 +69,13 @@ export class TicketsComponent implements OnInit {
   tableSelected($item){
     this.item = this.tickets.filter((obj) => obj.id == $item.id)[0];
   }
+  
+  itemUpdate(item){
+    console.log(item);
+  }
+
+  itemDelete(item){
+    console.log(item);
+  }
 
 }

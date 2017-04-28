@@ -18,8 +18,8 @@ export class AuthComponent implements OnInit {
   }
 
   login(): any{
-    this.authService.login(this.username,this.password);
-    location.reload();
+    this.authService.lblogin(this.username,this.password);
+    //location.reload();
   }
 
   logout(): any{
